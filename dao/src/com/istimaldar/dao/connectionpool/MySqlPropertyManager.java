@@ -1,13 +1,12 @@
 package com.istimaldar.dao.connectionpool;
 
-import java.io.BufferedReader;
-import java.io.File;
+import java.io.*;
 import java.util.Properties;
 
 /**
  * Created by istimaldar
  */
-public class MySqlPropertyManager {
+class MySqlPropertyManager {
 
     private final String PATH = "db.properties";
     private final String PREFIX = this.getClass().getResource("/").getPath();
@@ -20,7 +19,22 @@ public class MySqlPropertyManager {
         static final MySqlPropertyManager INSTANCE = new MySqlPropertyManager();
     }
 
-    public static MySqlPropertyManager getInstance() {
+    static MySqlPropertyManager getInstance() {
         return MySqlPropertyManagerSingletonHolder.INSTANCE;
+    }
+
+    private MySqlPropertyManager() {
+        try {
+            reader = new BufferedReader(new FileReader(file));
+            properties.load(reader);
+        } catch (FileNotFoundException e) {
+            System.err.println("File db.properties not found.");
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    String getValue(String key) {
+        return properties.getProperty(key);
     }
 }
