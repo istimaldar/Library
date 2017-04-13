@@ -10,11 +10,11 @@ import java.util.List;
  */
 public class BookDAOImpl implements BookDAO {
     private static class BookSingletonHolder {
-        static final BookDAOImpl instance = new BookDAOImpl();
+        static final BookDAOImpl INSTANCE = new BookDAOImpl();
     }
 
     public static BookDAOImpl getInstance() {
-        return BookSingletonHolder.instance;
+        return BookSingletonHolder.INSTANCE;
     }
 
     @Override

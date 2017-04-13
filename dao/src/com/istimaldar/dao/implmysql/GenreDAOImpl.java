@@ -10,11 +10,11 @@ import java.util.List;
  */
 public class GenreDAOImpl implements GenreDAO {
     private static class GenreSingletonHolder {
-        static final GenreDAOImpl instance = new GenreDAOImpl();
+        static final GenreDAOImpl INSTANCE = new GenreDAOImpl();
     }
 
     public static GenreDAO getInstance() {
-        return GenreSingletonHolder.instance;
+        return GenreSingletonHolder.INSTANCE;
     }
 
     @Override

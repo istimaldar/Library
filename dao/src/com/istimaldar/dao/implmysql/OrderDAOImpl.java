@@ -10,11 +10,11 @@ import java.util.List;
  */
 public class OrderDAOImpl implements OrderDAO {
     private static class OrderSingletonHolder {
-        static final OrderDAOImpl instance = new OrderDAOImpl();
+        static final OrderDAOImpl INSTANCE = new OrderDAOImpl();
     }
 
     public static OrderDAO getInstance() {
-        return OrderSingletonHolder.instance;
+        return OrderSingletonHolder.INSTANCE;
     }
     
     @Override

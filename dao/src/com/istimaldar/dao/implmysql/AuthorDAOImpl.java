@@ -10,11 +10,11 @@ import java.util.List;
  */
 public class AuthorDAOImpl implements AuthorDAO {
     private static class AuthorSingletonHolder {
-        static final AuthorDAOImpl instance = new AuthorDAOImpl();
+        static final AuthorDAOImpl INSTANCE = new AuthorDAOImpl();
     }
 
     public static AuthorDAO getInstance() {
-        return AuthorSingletonHolder.instance;
+        return AuthorSingletonHolder.INSTANCE;
     }
 
     @Override
