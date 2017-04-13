@@ -8,9 +8,9 @@ import java.util.List;
  * Created by istimaldar
  */
 public interface CustomerDAO {
-    void createCustomer(Customer customer);
+    void createCustomer(Customer Customer);
     Customer readCustomerById(int id);
-    void updateCustomer(Customer customer);
+    void updateCustomer(Customer Customer);
     void deleteCustomerById(int id);
     List<Customer> getAll();
 }

@@ -1,6 +1,6 @@
 package com.istimaldar.dao.entity;
 
-import java.util.ArrayList;
+import java.util.LinkedList;
 import java.util.List;
 
 /**
@@ -11,18 +11,18 @@ public class Customer
     private int id;
     private String firstName;
     private String lastName;
-    private List<Book> takenBooks;
+    private List<Order> orders;
 
-    public Customer(int id, String firstName, String lastName, List<Book> takenBooks)
+    public Customer(int id, String firstName, String lastName, List<Order> orders)
     {
         this.id = id;
         this.firstName = firstName;
         this.lastName = lastName;
-        this.takenBooks = takenBooks;
+        this.orders = orders;
     }
 
     public Customer(int id, String firstName, String lastName)
     {
-        this(id, firstName, lastName, new ArrayList<Book>());
+        this(id, firstName, lastName, new LinkedList<>());
     }
 }

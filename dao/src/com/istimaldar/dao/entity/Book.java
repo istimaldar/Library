@@ -4,10 +4,11 @@ package com.istimaldar.dao.entity;
  * Created by istimaldar
  */
 public class Book {
-    int id;
-    int name;
-    String language;
-    Author author;
+    private int id;
+    private int name;
+    private String language;
+    private Author author;
+    private boolean available;
 
     public Book(int id, int name, String language, Author author)
     {
@@ -15,5 +16,6 @@ public class Book {
         this.name = name;
         this.language = language;
         this.author = author;
+        this.available = true;
     }
 }

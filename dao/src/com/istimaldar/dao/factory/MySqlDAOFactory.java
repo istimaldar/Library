@@ -1,11 +1,7 @@
 package com.istimaldar.dao.factory;
 
-import com.istimaldar.dao.daointerface.AuthorDAO;
-import com.istimaldar.dao.daointerface.BookDAO;
-import com.istimaldar.dao.daointerface.CustomerDAO;
-import com.istimaldar.dao.implmysql.AuthorDAOImpl;
-import com.istimaldar.dao.implmysql.BookDAOImpl;
-import com.istimaldar.dao.implmysql.CustomerDAOImpl;
+import com.istimaldar.dao.daointerface.*;
+import com.istimaldar.dao.implmysql.*;
 
 /**
  * Created by istimaldar
@@ -24,5 +20,15 @@ public class MySqlDAOFactory implements DAOFactory {
     @Override
     public CustomerDAO getCustomerDAO() {
         return CustomerDAOImpl.getInstance();
+    }
+
+    @Override
+    public GenreDAO getGenreDAO() {
+        return GenreDAOImpl.getInstance();
+    }
+
+    @Override
+    public OrderDAO getOrderDAO() {
+        return OrderDAOImpl.getInstance();
     }
 }
