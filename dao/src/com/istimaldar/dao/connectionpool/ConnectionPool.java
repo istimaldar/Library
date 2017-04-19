@@ -32,6 +32,7 @@ public class ConnectionPool {
             poolSize = 10;
             System.err.println("Invalid number format");
         }
+        initPoolData();
     }
 
     private static class ConnectionPoolSingletonHolder {
@@ -42,7 +43,7 @@ public class ConnectionPool {
         return ConnectionPoolSingletonHolder.INSTANCE;
     }
 
-    public void initPoolData() throws SQLException {
+    private void initPoolData() {
             dataSource.setDriverClassName(driverName);
             dataSource.setUrl(url);
             dataSource.setUsername(user);
@@ -54,25 +55,29 @@ public class ConnectionPool {
         dataSource.close();
     }
 
-    public ResultSet executeQuere(String request, String [] parametres) throws SQLException {
+    public Connection getConnection() throws SQLException {
+        return dataSource.getConnection();
+    }
+
+    public ResultSet executeQuere(String request, String ... parameters) throws SQLException {
         try (
                 Connection connection = dataSource.getConnection();
                 PreparedStatement statement = connection.prepareStatement(request)
         ) {
-            for (int i = 1; i <= parametres.length; i++) {
-                statement.setString(i, parametres[i - 1]);
+            for (int i = 1; i <= parameters.length; i++) {
+                statement.setString(i, parameters[i - 1]);
             }
             return statement.executeQuery();
         }
     }
 
-    public int executeUpdate(String request, String [] parametres) throws SQLException {
+    public int executeUpdate(String request, String ... parameters) throws SQLException {
         try (
                 Connection connection = dataSource.getConnection();
                 PreparedStatement statement = connection.prepareStatement(request)
         ) {
-            for (int i = 1; i <= parametres.length; i++) {
-                statement.setString(i, parametres[i - 1]);
+            for (int i = 1; i <= parameters.length; i++) {
+                statement.setString(i, parameters[i - 1]);
             }
             return statement.executeUpdate();
         }

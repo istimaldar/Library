@@ -7,6 +7,10 @@ import com.istimaldar.dao.implmysql.*;
  * Created by istimaldar
  */
 public class MySqlDAOFactory implements DAOFactory {
+    private static class MySqlDAOFactorySingletonHolder {
+        static final MySqlDAOFactory INSTANCE = new MySqlDAOFactory();
+    }
+
     @Override
     public AuthorDAO getAuthorDAO() {
         return AuthorDAOImpl.getInstance();
@@ -30,5 +34,9 @@ public class MySqlDAOFactory implements DAOFactory {
     @Override
     public OrderDAO getOrderDAO() {
         return OrderDAOImpl.getInstance();
+    }
+
+    public static DAOFactory getInstance() {
+        return MySqlDAOFactorySingletonHolder.INSTANCE;
     }
 }

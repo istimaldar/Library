@@ -14,4 +14,16 @@ public class Genre {
         this.genre = genre;
         this.description = description;
     }
+
+    public int getId() {
+        return id;
+    }
+
+    public String getGenre() {
+        return genre;
+    }
+
+    public String getDescription() {
+        return description;
+    }
 }

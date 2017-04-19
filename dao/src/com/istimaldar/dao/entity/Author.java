@@ -4,10 +4,10 @@ package com.istimaldar.dao.entity;
  * Created by istimaldar
  */
 public class Author {
-    int id;
-    String firstName;
-    String lastName;
-    String description;
+    private int id;
+    private String firstName;
+    private String lastName;
+    private String description;
 
     public Author(int id, String firstName, String lastName, String description)
     {
@@ -15,5 +15,21 @@ public class Author {
         this.firstName = firstName;
         this.lastName = lastName;
         this.description = description;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public String getFirstName() {
+        return firstName;
+    }
+
+    public String getLastName() {
+        return lastName;
+    }
+
+    public String getDescription() {
+        return description;
     }
 }

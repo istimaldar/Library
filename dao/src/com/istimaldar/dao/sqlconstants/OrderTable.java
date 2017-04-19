@@ -13,11 +13,11 @@ public class OrderTable {
     public static final String BOOK_ID = "book_id";
     public static final String CUSTOMER_ID = "customer_id";
 
-    public static final String CREATE = "INSERT INTO library.order (subscription, beginning, ending, closed," +
+    public static final String CREATE = "INSERT INTO library.book_order (subscription, beginning, ending, closed," +
             " close_date, book_id, customer_id) VALUES (?, ?, ?, ?, ?, ?, ?);";
     public static final String READ = "SELECT * FROM library.order WHERE id = ?;";
-    public static final String UPDATE = "UPDATE library.order SET subscription = ?, beginning = ?, ending = ?," +
-            " closed = ?, close_date = ?, book_id = ?, customer_id = ? WHERE id = ?;";
-    public static final String DELETE = "DELETE FROM library.order WHERE id = ?;";
-    public static final String READ_ALL = "SELECT * FROM library.order;";
+    public static final String UPDATE = "UPDATE library.book_order SET id = ?, subscription = ?, beginning = ?, " +
+            "ending = ?, closed = ?, close_date = ?, book_id = ?, customer_id = ? WHERE id = ?;";
+    public static final String DELETE = "DELETE FROM library.book_order WHERE id = ?;";
+    public static final String READ_ALL = "SELECT * FROM library.book_order;";
 }

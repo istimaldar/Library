@@ -5,7 +5,7 @@ import com.istimaldar.dao.daointerface.*;
 /**
  * Created by istimaldar
  */
-interface DAOFactory {
+public interface DAOFactory {
     AuthorDAO getAuthorDAO();
     BookDAO getBookDAO();
     CustomerDAO getCustomerDAO();

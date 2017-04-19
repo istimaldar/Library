@@ -13,8 +13,10 @@ public class Order {
     private boolean closed;
     private Date closeDate;
     private Book book;
+    private int customerID;
 
-    public Order(int id, boolean subscription, Date beginning, Date ending, boolean closed, Date closeDate, Book book)
+    public Order(int id, boolean subscription, Date beginning, Date ending, boolean closed, Date closeDate,
+                 Book book, int customerID)
     {
         this.id = id;
         this.subscription = subscription;
@@ -23,5 +25,38 @@ public class Order {
         this.closed = closed;
         this.closeDate = closeDate;
         this.book = book;
+        this.customerID = customerID;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public boolean isSubscription() {
+        return subscription;
+    }
+
+    public Date getBeginning() {
+        return beginning;
+    }
+
+    public Date getEnding() {
+        return ending;
+    }
+
+    public boolean isClosed() {
+        return closed;
+    }
+
+    public Date getCloseDate() {
+        return closeDate;
+    }
+
+    public Book getBook() {
+        return book;
+    }
+
+    public int getCustomerID() {
+        return customerID;
     }
 }

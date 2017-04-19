@@ -25,4 +25,20 @@ public class Customer
     {
         this(id, firstName, lastName, new LinkedList<>());
     }
+
+    public int getId() {
+        return id;
+    }
+
+    public String getFirstName() {
+        return firstName;
+    }
+
+    public String getLastName() {
+        return lastName;
+    }
+
+    public List<Order> getOrders() {
+        return orders;
+    }
 }

@@ -12,7 +12,7 @@ public class AuthorTable {
     public static final String CREATE = "INSERT INTO library.author (first_name, last_name, description) " +
             "VALUES (? , ?, ?);";
     public static final String READ = "SELECT * FROM library.author WHERE id = ?;";
-    public static final String UPDATE = "UPDATE library.author SET first_name = ?, last_name = ?, " +
+    public static final String UPDATE = "UPDATE library.author SET id = ?, first_name = ?, last_name = ?, " +
             "description = ? WHERE id = ?;";
     public static final String DELETE = "DELETE FROM library.author WHERE id = ?;";
     public static final String READ_ALL = "SELECT * FROM library.author;";

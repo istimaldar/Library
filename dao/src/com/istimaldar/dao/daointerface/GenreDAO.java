@@ -10,7 +10,7 @@ import java.util.List;
 public interface GenreDAO {
     void createGenre(Genre customer);
     Genre readGenreById(int id);
-    void updateGenre(Genre customer);
+    boolean updateGenre(Genre customer);
     void deleteGenreById(int id);
     List<Genre> getAll();
 }

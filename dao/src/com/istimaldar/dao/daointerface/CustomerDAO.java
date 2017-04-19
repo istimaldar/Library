@@ -10,7 +10,7 @@ import java.util.List;
 public interface CustomerDAO {
     void createCustomer(Customer Customer);
     Customer readCustomerById(int id);
-    void updateCustomer(Customer Customer);
+    boolean updateCustomer(Customer Customer);
     void deleteCustomerById(int id);
     List<Customer> getAll();
 }

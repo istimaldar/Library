@@ -12,7 +12,8 @@ public class BookTable
 
     public static final String CREATE = "INSERT INTO library.book (author_id, name, language) VALUES (?, ?, ?);";
     public static final String READ = "SELECT * FROM library.book WHERE id = ?;";
-    public static final String UPDATE = "UPDATE library.book SET author_id = ?, name = ?, language = ? WHERE id = ?;";
+    public static final String UPDATE = "UPDATE library.book SET id = ?, author_id = ?, name = ?, language = ? " +
+            "WHERE id = ?;";
     public static final String DELETE = "DELETE FROM library.book WHERE id = ?;";
     public static final String READ_ALL = "SELECT * FROM library.book;";
 }

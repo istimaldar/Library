@@ -10,7 +10,7 @@ import java.util.List;
 public interface AuthorDAO {
     void createAuthor(Author author);
     Author readAuthorById(int id);
-    void updateAuthor(Author author);
+    boolean updateAuthor(Author author);
     void deleteAuthorById(int id);
     List<Author> getAll();
 }

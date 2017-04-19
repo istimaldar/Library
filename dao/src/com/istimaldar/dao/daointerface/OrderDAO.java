@@ -10,7 +10,7 @@ import java.util.List;
 public interface OrderDAO {
     void createOrder(Order customer);
     Order readOrderById(int id);
-    void updateOrder(Order customer);
+    boolean updateOrder(Order customer);
     void deleteOrderById(int id);
     List<Order> getAll();
 }
