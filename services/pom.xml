@@ -15,7 +15,12 @@
         <dependency>
             <groupId>javax.servlet</groupId>
             <artifactId>javax.servlet-api</artifactId>
-            <version>3.0.1</version>
+            <version>RELEASE</version>
+        </dependency>
+        <dependency>
+            <groupId>com.istimaldar.libray-app</groupId>
+            <artifactId>dao</artifactId>
+            <version>0.1-alpha</version>
         </dependency>
     </dependencies>
 

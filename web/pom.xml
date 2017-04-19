@@ -11,6 +11,13 @@
 
     <groupId>com.istimaldar.library-app</groupId>
     <artifactId>web</artifactId>
+    <dependencies>
+        <dependency>
+            <groupId>javax.servlet</groupId>
+            <artifactId>javax.servlet-api</artifactId>
+            <version>RELEASE</version>
+        </dependency>
+    </dependencies>
 
 
 </project>
