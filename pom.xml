@@ -10,5 +10,5 @@
     <module>web</module>
   </modules>
   <packaging>pom</packaging>
-  <name>library-app</name>
+  <login>library-app</login>
 </project>

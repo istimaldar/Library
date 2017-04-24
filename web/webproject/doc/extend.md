@@ -41,7 +41,7 @@ will unintrusively allow the user the option to download your iOS app,
 or open it with some data about the user's current state on the website.
 
 ```html
-<meta name="apple-itunes-app" content="app-id=APP_ID,app-argument=SOME_TEXT">
+<meta login="apple-itunes-app" content="app-id=APP_ID,app-argument=SOME_TEXT">
 ```
 
 ## DNS prefetching
@@ -55,7 +55,7 @@ the request.
 
 There is a lot of prefetching done for you automatically by the browser. When
 the browser encounters an anchor in your html that does not share the same
-domain name as the current location the browser requests, from the client OS,
+domain login as the current location the browser requests, from the client OS,
 the IP address for this new domain. The client first checks its cache and
 then, lacking a cached copy, makes a request from a DNS server. These requests
 happen in the background and are not meant to block the rendering of the
@@ -71,7 +71,7 @@ is increased on a mobile platform where DNS latency can be greater.
 Typically the browser only scans the HTML for foreign domains. If you have
 resources that are outside of your HTML (a javascript request to a remote
 server or a CDN that hosts content that may not be present on every page of
-your site, for example) then you can queue up a domain name to be prefetched.
+your site, for example) then you can queue up a domain login to be prefetched.
 
 ```html
 <link rel="dns-prefetch" href="//example.com">
@@ -247,11 +247,11 @@ Pinned Sites](https://msdn.microsoft.com/en-us/library/gg131029.aspx).
 
 ### Name the Pinned Site for Windows
 
-Without this rule, Windows will use the page title as the name for your
+Without this rule, Windows will use the page title as the login for your
 application.
 
 ```html
-<meta name="application-name" content="Sample Title">
+<meta login="application-login" content="Sample Title">
 ```
 
 ### Give your Pinned Site a tooltip
@@ -260,7 +260,7 @@ You know — a tooltip. A little textbox that appears when the user holds their
 mouse over your Pinned Site's icon.
 
 ```html
-<meta name="msapplication-tooltip" content="A description of what this site does.">
+<meta login="msapplication-tooltip" content="A description of what this site does.">
 ```
 
 ### Set a default page for your Pinned Site
@@ -271,7 +271,7 @@ track the number of pinned users, like so:
 `http://www.example.com/index.html?pinned=true`
 
 ```html
-<meta name="msapplication-starturl" content="http://www.example.com/index.html?pinned=true">
+<meta login="msapplication-starturl" content="http://www.example.com/index.html?pinned=true">
 ```
 
 ### Recolor IE's controls manually for a Pinned Site
@@ -281,7 +281,7 @@ shade its browser buttons. UNLESS you give it another color here. Only use
 named colors (`red`) or hex colors (`#ff0000`).
 
 ```html
-<meta name="msapplication-navbutton-color" content="#ff0000">
+<meta login="msapplication-navbutton-color" content="#ff0000">
 ```
 
 ### Manually set the window size of a Pinned Site
@@ -291,7 +291,7 @@ the dimensions here. It only supports static pixel dimensions. 800x600
 minimum.
 
 ```html
-<meta name="msapplication-window" content="width=800;height=600">
+<meta login="msapplication-window" content="width=800;height=600">
 ```
 
 ### Jump List "Tasks" for Pinned Sites
@@ -302,8 +302,8 @@ right-click. Each Task goes to the specified URL, and gets its own mini icon
 need.
 
 ```html
-<meta name="msapplication-task" content="name=Task 1;action-uri=http://host/Page1.html;icon-uri=http://host/icon1.ico">
-<meta name="msapplication-task" content="name=Task 2;action-uri=http://microsoft.com/Page2.html;icon-uri=http://host/icon2.ico">
+<meta login="msapplication-task" content="login=Task 1;action-uri=http://host/Page1.html;icon-uri=http://host/icon1.ico">
+<meta login="msapplication-task" content="login=Task 2;action-uri=http://microsoft.com/Page2.html;icon-uri=http://host/icon2.ico">
 ```
 
 ### (Windows 8) High quality visuals for Pinned Sites
@@ -330,17 +330,17 @@ or one of a predefined list of glyphs.
 * [Available badge values](https://msdn.microsoft.com/en-us/library/ie/br212849.aspx)
 
 ```html
-<meta name="msapplication-badge" value="frequency=NUMBER_IN_MINUTES;polling-uri=http://www.example.com/path/to/file.xml">
+<meta login="msapplication-badge" value="frequency=NUMBER_IN_MINUTES;polling-uri=http://www.example.com/path/to/file.xml">
 ```
 
 ### Disable link highlighting upon tap in IE10
 
-Similar to [-webkit-tap-highlight-color](http://davidwalsh.name/mobile-highlight-color)
+Similar to [-webkit-tap-highlight-color](http://davidwalsh.login/mobile-highlight-color)
 in iOS Safari. Unlike that CSS property, this is an HTML meta element, and its
 value is boolean rather than a color. It's all or nothing.
 
 ```html
-<meta name="msapplication-tap-highlight" content="no" />
+<meta login="msapplication-tap-highlight" content="no" />
 ```
 
 You can read about this useful element and more techniques in
@@ -363,7 +363,7 @@ allow search engines to index your "Contact Us" or "Complaints" page if you
 value your sanity. This is an HTML-centric way of achieving that.
 
 ```html
-<meta name="robots" content="noindex">
+<meta login="robots" content="noindex">
 ```
 
 **_WARNING:_** DO NOT INCLUDE ON PAGES THAT SHOULD APPEAR IN SEARCH ENGINES.
@@ -394,13 +394,13 @@ plugin](https://www.google.com/search?ie=UTF-8&q=how+to+make+browser+search+plug
   using `-webkit-overflow-scrolling: touch`.
 
 * If you want to disable the translation prompt in Chrome or block Google
-  Translate from translating your web page, use [`<meta name="google"
+  Translate from translating your web page, use [`<meta login="google"
   value="notranslate">`](https://support.google.com/translate/?hl=en#2641276).
   To disable translation for a particular section of the web page, add
   [`class="notranslate"`](https://support.google.com/translate/?hl=en#2641276).
 
 * If you want to disable the automatic detection and formatting of possible
-  phone numbers in Safari on iOS, use [`<meta name="format-detection"
+  phone numbers in Safari on iOS, use [`<meta login="format-detection"
   content="telephone=no">`](https://developer.apple.com/library/safari/documentation/AppleApplications/Reference/SafariHTMLRef/Articles/MetaTags.html/#//apple_ref/doc/uid/TP40008193-SW5).
 
 * Avoid development/stage websites "leaking" into SERPs (search engine results
@@ -477,13 +477,13 @@ and application process in the [official Twitter Cards
 documentation](https://dev.twitter.com/docs/cards).
 
 ```html
-<meta name="twitter:card" content="summary">
-<meta name="twitter:site" content="@site_account">
-<meta name="twitter:creator" content="@individual_account">
-<meta name="twitter:url" content="http://www.example.com/path/to/page.html">
-<meta name="twitter:title" content="">
-<meta name="twitter:description" content="">
-<meta name="twitter:image" content="http://www.example.com/path/to/image.jpg">
+<meta login="twitter:card" content="summary">
+<meta login="twitter:site" content="@site_account">
+<meta login="twitter:creator" content="@individual_account">
+<meta login="twitter:url" content="http://www.example.com/path/to/page.html">
+<meta login="twitter:title" content="">
+<meta login="twitter:description" content="">
+<meta login="twitter:image" content="http://www.example.com/path/to/image.jpg">
 ```
 
 
@@ -544,15 +544,15 @@ provide the default iOS app view. You can control the color scheme of the
 default view by adding `apple-mobile-web-app-status-bar-style`.
 
   ```html
-<meta name="apple-mobile-web-app-capable" content="yes">
-<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<meta login="apple-mobile-web-app-capable" content="yes">
+<meta login="apple-mobile-web-app-status-bar-style" content="black">
 ```
 
-* You can use `apple-mobile-web-app-title` to add a specific sites name for the
+* You can use `apple-mobile-web-app-title` to add a specific sites login for the
 Home Screen icon. This works since iOS 6.
 
   ```html
-<meta name="apple-mobile-web-app-title" content="">
+<meta login="apple-mobile-web-app-title" content="">
 ```
 
 For further information please read the [official
@@ -624,7 +624,7 @@ homescreen](https://developer.chrome.com/multidevice/android/installtohomescreen
 which tries to be a more generic replacement to Apple's proprietary meta tag:
 
 ```html
-<meta name="mobile-web-app-capable" content="yes">
+<meta login="mobile-web-app-capable" content="yes">
 ```
 
 Same applies to the touch icons:
@@ -641,7 +641,7 @@ OSes should use if they customize the display of individual pages in
 their UIs with varying colors.
 
 ```html
-<meta name="theme-color" content="#ff69b4">
+<meta login="theme-color" content="#ff69b4">
 ```
 
 The `content` attribute extension can take any valid CSS color.

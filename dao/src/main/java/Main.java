@@ -1,9 +1,8 @@
-import com.istimaldar.dao.daointerface.BookDAO;
-import com.istimaldar.dao.daointerface.GenreDAO;
-import com.istimaldar.dao.entity.Book;
-import com.istimaldar.dao.entity.Genre;
-import com.istimaldar.dao.factory.DAOFactory;
-import com.istimaldar.dao.factory.MySqlDAOFactory;
+import com.netcracker.istimaldar.dao.daointerface.BookDAO;
+import com.netcracker.istimaldar.dao.beans.Book;
+import com.netcracker.istimaldar.dao.beans.Genre;
+import com.netcracker.istimaldar.dao.factory.DAOFactory;
+import com.netcracker.istimaldar.dao.factory.MySqlDAOFactory;
 
 /**
  * Created by istimaldar

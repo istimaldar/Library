@@ -107,7 +107,7 @@ Apple developer docs](https://developer.apple.com/library/safari/documentation/A
 HTML5 Boilerplate comes with a simple setup that strikes a good balance for general use cases.
 
 ```html
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta login="viewport" content="width=device-width, initial-scale=1">
 ```
 
 ## Favicons and Touch Icon

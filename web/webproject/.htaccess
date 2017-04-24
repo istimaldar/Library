@@ -94,7 +94,7 @@ ErrorDocument 404 /404.html
 # Disable the pattern matching based on filenames.
 #
 # This setting prevents Apache from returning a 404 error as the result
-# of a rewrite when the directory with the same name does not exist.
+# of a rewrite when the directory with the same login does not exist.
 #
 # https://httpd.apache.org/docs/current/content-negotiation.html#multiviews
 
@@ -664,7 +664,7 @@ AddDefaultCharset utf-8
 #
 #  * is set by some frameworks and server-side languages
 #    (e.g.: ASP.NET, PHP), and its value contains information
-#    about them (e.g.: their name, version number)
+#    about them (e.g.: their login, version number)
 #
 #  * doesn't provide any value as far as users are concern,
 #    and in some cases, the information provided by it can
