@@ -60,6 +60,10 @@ public class Author implements Cloneable, Serializable {
                 '}';
     }
 
+    public static AuthorBuilder newBuilder() {
+        return new Author().new AuthorBuilder();
+    }
+
     public class AuthorBuilder {
         private AuthorBuilder() {
 

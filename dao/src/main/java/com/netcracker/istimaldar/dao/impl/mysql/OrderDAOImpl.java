@@ -58,11 +58,16 @@ public class OrderDAOImpl implements OrderDAO {
             statement.setInt(1, id);
             try (ResultSet resultSet = statement.executeQuery()) {
                 if (resultSet.next()) {
-                    result = new Order(resultSet.getInt(OrderTable.ID), resultSet.getBoolean(OrderTable.SUBCRIPTION),
-                            resultSet.getDate(OrderTable.BEGINNING), resultSet.getDate(OrderTable.ENDING),
-                            resultSet.getBoolean(OrderTable.CLOSED), resultSet.getDate(OrderTable.CLOSE_DATE),
-                            BookDAOImpl.getInstance().readBookById(resultSet.getInt(OrderTable.BOOK_ID)),
-                            resultSet.getInt(OrderTable.CUSTOMER_ID));
+                    result = Order.newBuilder()
+                            .setId(resultSet.getInt(OrderTable.ID))
+                            .setSubscription(resultSet.getBoolean(OrderTable.SUBCRIPTION))
+                            .setBeginning(resultSet.getDate(OrderTable.BEGINNING))
+                            .setEnding(resultSet.getDate(OrderTable.ENDING))
+                            .setClosed(resultSet.getBoolean(OrderTable.CLOSED))
+                            .setCloseDate(resultSet.getDate(OrderTable.CLOSE_DATE))
+                            .setBook(BookDAOImpl.getInstance().readBookById(resultSet.getInt(OrderTable.BOOK_ID)))
+                            .setCustomerID(resultSet.getInt(OrderTable.CUSTOMER_ID))
+                            .build();
                 }
             }
         }

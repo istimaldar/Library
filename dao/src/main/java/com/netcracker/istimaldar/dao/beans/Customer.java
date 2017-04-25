@@ -62,6 +62,10 @@ public class Customer implements Cloneable, Serializable {
                 '}';
     }
 
+    public static CustomerBuilder newBuilder() {
+        return new Customer().new CustomerBuilder();
+    }
+
     public class CustomerBuilder {
         private CustomerBuilder() {
 

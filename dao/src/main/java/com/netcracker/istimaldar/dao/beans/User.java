@@ -11,11 +11,8 @@ public class User implements Cloneable, Serializable {
     String hpassword;
     String email;
 
-    public User(int id, String login, String hpassword, String email) {
-        this.id = id;
-        this.login = login;
-        this.hpassword = hpassword;
-        this.email = email;
+    private User() {
+
     }
 
 
@@ -61,6 +58,10 @@ public class User implements Cloneable, Serializable {
                 ", hpassword='" + hpassword + '\'' +
                 ", email='" + email + '\'' +
                 '}';
+    }
+
+    public static UserBuilder newBuilder() {
+        return new User().new UserBuilder();
     }
 
     public class UserBuilder {

@@ -68,6 +68,10 @@ public class Book implements Cloneable, Serializable {
                 '}';
     }
 
+    public static BookBuilder newBuilder() {
+        return new Book().new BookBuilder();
+    }
+
     public class BookBuilder {
         private BookBuilder() {
 

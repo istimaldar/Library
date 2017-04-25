@@ -59,16 +59,23 @@ public class CustomerDAOImpl implements CustomerDAO {
                 while (resultSet.next()) {
                     int bookID = resultSet.getInt(OrderTable.BOOK_ID);
                     if (resultSet.wasNull()) {
-                        order.add(new Order(resultSet.getInt(CustomerTable.ORDER_ID),
-                                resultSet.getBoolean(OrderTable.SUBCRIPTION),
-                                resultSet.getDate(OrderTable.BEGINNING), resultSet.getDate(OrderTable.ENDING),
-                                resultSet.getBoolean(OrderTable.CLOSED), resultSet.getDate(OrderTable.CLOSE_DATE),
-                                BookDAOImpl.getInstance().readBookById(bookID),
-                                resultSet.getInt(OrderTable.CUSTOMER_ID)));
+                        order.add(Order.newBuilder()
+                                .setId(resultSet.getInt(CustomerTable.ORDER_ID))
+                                .setSubscription(resultSet.getBoolean(OrderTable.SUBCRIPTION))
+                                .setBeginning(resultSet.getDate(OrderTable.BEGINNING))
+                                .setEnding(resultSet.getDate(OrderTable.ENDING))
+                                .setClosed(resultSet.getBoolean(OrderTable.CLOSED))
+                                .setCloseDate(resultSet.getDate(OrderTable.CLOSE_DATE))
+                                .setBook(BookDAOImpl.getInstance().readBookById(bookID))
+                                .setCustomerID(resultSet.getInt(OrderTable.CUSTOMER_ID))
+                                .build());
                     }
-                    result = new Customer(resultSet.getInt(CustomerTable.ID),
-                            resultSet.getString(CustomerTable.FIRST_NAME), resultSet.getString(CustomerTable.LAST_NAME),
-                            order);
+                    result = Customer.newBuilder()
+                            .setId(resultSet.getInt(CustomerTable.ID))
+                            .setFirstName(resultSet.getString(CustomerTable.FIRST_NAME))
+                            .setLastName(resultSet.getString(CustomerTable.LAST_NAME))
+                            .setOrders(order)
+                            .build();
                 }
             }
         }

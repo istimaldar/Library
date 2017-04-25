@@ -11,7 +11,7 @@ public class Genre implements Cloneable, Serializable {
     private String description;
 
     private Genre() {
-;
+
     }
 
     public int getId() {
@@ -50,6 +50,10 @@ public class Genre implements Cloneable, Serializable {
                 ", genre='" + genre + '\'' +
                 ", description='" + description + '\'' +
                 '}';
+    }
+
+    public static GenreBuilder newBuilder() {
+        return new Genre().new GenreBuilder();
     }
 
     public class GenreBuilder {

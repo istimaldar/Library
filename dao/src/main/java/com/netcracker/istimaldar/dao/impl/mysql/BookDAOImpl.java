@@ -61,19 +61,26 @@ public class BookDAOImpl implements BookDAO {
                 statement.setInt(1, id);
                 try (ResultSet resultSet = statement.executeQuery()) {
                     while (resultSet.next()) {
-                        genres.push(new Genre(resultSet.getInt(BookGenreTable.GENRE_ID),
-                                resultSet.getString(GenreTable.GENRE),
-                                resultSet.getString(GenreTable.DESCRIPTION)));
+                        genres.push(Genre.newBuilder()
+                                        .setId(resultSet.getInt(BookGenreTable.GENRE_ID))
+                                        .setGenre(resultSet.getString(GenreTable.GENRE))
+                                        .setDescription(resultSet.getString(GenreTable.DESCRIPTION))
+                                        .build()
+                                );
                     }
                     if (resultSet.previous()) {
-                        result = new Book(resultSet.getInt(BookTable.ID),
-                                resultSet.getString(BookTable.NAME),
-                                resultSet.getString(BookTable.LANGUAGE),
-                                new Author(resultSet.getInt(BookTable.AUTHOR_ID),
-                                        resultSet.getString(AuthorTable.FIRST_NAME),
-                                        resultSet.getString(AuthorTable.LAST_NAME),
-                                        resultSet.getString(AuthorTable.DESCRIPTION)),
-                                genres);
+                        result = Book.newBuilder()
+                                .setId(resultSet.getInt(BookTable.ID))
+                                .setName(resultSet.getString(BookTable.NAME))
+                                .setLanguage(resultSet.getString(BookTable.LANGUAGE))
+                                .setAuthor(Author.newBuilder()
+                                        .setId(resultSet.getInt(BookTable.AUTHOR_ID))
+                                        .setFirstName(resultSet.getString(AuthorTable.FIRST_NAME))
+                                        .setLastName(resultSet.getString(AuthorTable.LAST_NAME))
+                                        .setDescription(resultSet.getString(AuthorTable.DESCRIPTION))
+                                        .build())
+                                .setGenres(genres)
+                                .build();
                     }
                 }
         }

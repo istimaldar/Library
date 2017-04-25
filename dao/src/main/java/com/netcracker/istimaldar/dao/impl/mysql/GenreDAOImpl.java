@@ -51,9 +51,11 @@ public class GenreDAOImpl implements GenreDAO {
                 statement.setInt(1, id);
                 try (ResultSet resultSet = statement.executeQuery()) {
                     if (resultSet.next()) {
-                        result = new Genre(resultSet.getInt(GenreTable.ID),
-                                resultSet.getString(GenreTable.GENRE),
-                                resultSet.getString(GenreTable.DESCRIPTION));
+                        result = Genre.newBuilder()
+                                .setId(resultSet.getInt(GenreTable.ID))
+                                .setGenre(resultSet.getString(GenreTable.GENRE))
+                                .setDescription(resultSet.getString(GenreTable.DESCRIPTION))
+                                .build();
                     }
                     else {
                         throw new SQLException();

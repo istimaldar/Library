@@ -2,7 +2,6 @@ package com.netcracker.istimaldar.dao.factory;
 
 import com.netcracker.istimaldar.dao.daointerface.*;
 import com.netcracker.istimaldar.dao.impl.mysql.*;
-import com.netcracker.istimaldar.dao.implmysql.*;
 
 /**
  * Created by istimaldar
@@ -35,6 +34,11 @@ public class MySqlDAOFactory implements DAOFactory {
     @Override
     public OrderDAO getOrderDAO() {
         return OrderDAOImpl.getInstance();
+    }
+
+    @Override
+    public UserDAO getUserDAO() {
+        return UserDAOImpl.getInstance();
     }
 
     public static DAOFactory getInstance() {

@@ -90,6 +90,10 @@ public class Order implements Cloneable, Serializable {
                 '}';
     }
 
+    public static OrderBuilder newBuilder() {
+        return new Order().new OrderBuilder();
+    }
+
     public class OrderBuilder {
         private OrderBuilder() {
 

@@ -16,6 +16,14 @@ import java.util.List;
  */
 public class UserDAOImpl implements UserDAO
 {
+    private static class UserSingletonHolder {
+        static final UserDAOImpl INSTANCE = new UserDAOImpl();
+    }
+
+    public static UserDAO getInstance() {
+        return UserSingletonHolder.INSTANCE;
+    }
+
     @Override
     public void createCustomer(User user) {
         ConnectionPool pool = ConnectionPool.getInstance();
@@ -47,10 +55,12 @@ public class UserDAOImpl implements UserDAO
             statement.setInt(1, id);
             try (ResultSet resultSet = statement.executeQuery()) {
                 if (resultSet.next()) {
-                    result = new User(resultSet.getInt(UserTable.ID),
-                            resultSet.getString(UserTable.LOGIN),
-                            resultSet.getString(UserTable.HPASSWORD),
-                            resultSet.getString(UserTable.EMAIL));
+                    result = User.newBuilder()
+                            .setId(resultSet.getInt(UserTable.ID))
+                            .setLogin(resultSet.getString(UserTable.LOGIN))
+                            .setHpassword(resultSet.getString(UserTable.HPASSWORD))
+                            .setEmail(resultSet.getString(UserTable.EMAIL))
+                            .build();
                 }
             }
         }

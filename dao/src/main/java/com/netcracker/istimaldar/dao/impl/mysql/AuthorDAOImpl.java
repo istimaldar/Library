@@ -54,10 +54,12 @@ public class AuthorDAOImpl implements AuthorDAO {
             statement.setInt(1, id);
             try (ResultSet resultSet = statement.executeQuery()) {
                 if (resultSet.next()) {
-                    result = new Author(resultSet.getInt(AuthorTable.ID),
-                            resultSet.getString(AuthorTable.FIRST_NAME),
-                            resultSet.getString(AuthorTable.LAST_NAME),
-                            resultSet.getString(AuthorTable.DESCRIPTION));
+                    result = Author.newBuilder()
+                            .setId(resultSet.getInt(AuthorTable.ID))
+                            .setFirstName(resultSet.getString(AuthorTable.FIRST_NAME))
+                            .setLastName(resultSet.getString(AuthorTable.LAST_NAME))
+                            .setDescription(resultSet.getString(AuthorTable.DESCRIPTION))
+                            .build();
                 }
                 else {
                     throw new SQLException();
