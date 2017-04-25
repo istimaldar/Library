@@ -6,10 +6,10 @@ import java.io.Serializable;
  * Created by istimaldar
  */
 public class User implements Cloneable, Serializable {
-    int id;
-    String login;
-    String hpassword;
-    String email;
+    private int id;
+    private String login;
+    private String hpassword;
+    private String email;
 
     private User() {
 
