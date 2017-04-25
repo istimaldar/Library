@@ -3,7 +3,11 @@ package com.netcracker.istimaldar.dao.sqlconstants;
 /**
  * Created by istimaldar
  */
-public class OrderTable {
+public final class OrderTable {
+    private OrderTable() {
+
+    }
+
     public static final String ID = "id";
     public static final String SUBCRIPTION = "subscription";
     public static final String BEGINNING = "beginning";

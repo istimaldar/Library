@@ -3,7 +3,11 @@ package com.netcracker.istimaldar.dao.sqlconstants;
 /**
  * Created by istimaldar
  */
-public class AuthorTable {
+public final class AuthorTable {
+    private AuthorTable() {
+
+    }
+
     public static final String ID = "id";
     public static final String FIRST_NAME = "first_name";
     public static final String LAST_NAME = "last_name";

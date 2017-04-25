@@ -3,7 +3,11 @@ package com.netcracker.istimaldar.dao.sqlconstants;
 /**
  * Created by istimaldar
  */
-public class RoleTable {
+public final class RoleTable {
+    private RoleTable() {
+
+    }
+
     public static final String ID = "id";
     public static final String ROLE = "role";
 

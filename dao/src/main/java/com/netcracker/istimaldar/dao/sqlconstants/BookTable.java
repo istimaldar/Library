@@ -3,8 +3,12 @@ package com.netcracker.istimaldar.dao.sqlconstants;
 /**
  * Created by istimaldar
  */
-public class BookTable
+public final class BookTable
 {
+    private BookTable() {
+
+    }
+
     public static final String ID = "id";
     public static final String AUTHOR_ID = "author_id";
     public static final String NAME = "name";

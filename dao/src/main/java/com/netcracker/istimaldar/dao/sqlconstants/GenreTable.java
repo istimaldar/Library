@@ -3,7 +3,11 @@ package com.netcracker.istimaldar.dao.sqlconstants;
 /**
  * Created by istimaldar
  */
-public class GenreTable {
+public final class GenreTable {
+    private GenreTable() {
+
+    }
+
     public static final String ID = "id";
     public static final String GENRE = "genre";
     public static final String DESCRIPTION = "description";

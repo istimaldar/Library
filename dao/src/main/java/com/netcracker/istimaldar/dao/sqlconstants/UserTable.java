@@ -3,7 +3,11 @@ package com.netcracker.istimaldar.dao.sqlconstants;
 /**
  * Created by istimaldar
  */
-public class UserTable {
+public final class UserTable {
+    private UserTable() {
+
+    }
+
     public static final String ID = "id";
     public static final String LOGIN = "login";
     public static final String HPASSWORD = "hpassword";
