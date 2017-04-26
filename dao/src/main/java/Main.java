@@ -1,21 +1,18 @@
-import com.netcracker.istimaldar.dao.daointerface.BookDAO;
-import com.netcracker.istimaldar.dao.beans.Book;
-import com.netcracker.istimaldar.dao.beans.Genre;
+import com.netcracker.istimaldar.dao.beans.Author;
+import com.netcracker.istimaldar.dao.daointerface.AuthorDAO;
 import com.netcracker.istimaldar.dao.factory.DAOFactory;
 import com.netcracker.istimaldar.dao.factory.MySqlDAOFactory;
+
+import java.sql.SQLException;
 
 /**
  * Created by istimaldar
  */
 public class Main {
-    public static void main(String [] args)
-    {
+    public static void main(String [] args) throws SQLException {
         DAOFactory factory  = MySqlDAOFactory.getInstance();
-        BookDAO bookDAO = factory.getBookDAO();
-        Book book = bookDAO.readBookById(1);
-        for (Genre genre : book.getGenres()) {
-            System.out.println(genre.getGenre());
-        }
+        AuthorDAO bookDAO = factory.getAuthorDAO();
+        //bookDAO.createAuthor(Author.newBuilder().setFirstName("a").setLastName("b").setDescription("c").build());
 
     }
 }

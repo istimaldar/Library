@@ -3,7 +3,7 @@ package com.netcracker.istimaldar.service.command;
 import com.netcracker.istimaldar.dao.beans.Author;
 import com.netcracker.istimaldar.dao.factory.MySqlDAOFactory;
 import com.netcracker.istimaldar.service.constants.RequestConstants;
-import org.apache.log4j.Logger;
+//import org.apache.log4j.Logger;
 
 import javax.servlet.http.HttpServletRequest;
 import java.sql.SQLException;
@@ -12,7 +12,7 @@ import java.sql.SQLException;
  * Created by istimaldar
  */
 public class AddAuthorCommand implements ActionCommand {
-    private Logger logger = Logger.getLogger(AddAuthorCommand.class.getName());
+    //private Logger logger = Logger.getLogger(AddAuthorCommand.class.getName());
 
     public String execute(HttpServletRequest request) {
         String firstName = request.getParameter(RequestConstants.FIRST_NAME);
@@ -27,7 +27,7 @@ public class AddAuthorCommand implements ActionCommand {
             MySqlDAOFactory.getInstance().getAuthorDAO().createAuthor(author);
         }
         catch (SQLException e) {
-            logger.error("SERVICE:", e);
+            //logger.error("SERVICE:", e);
         }
         return null;
     }

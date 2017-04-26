@@ -13,6 +13,9 @@ class MySqlPropertyManager {
 
     private Properties properties = new Properties();
     private BufferedReader reader = null;
+    {
+        System.out.println(PREFIX + PATH);
+    }
     private File file = new File(PREFIX + PATH);
 
     private static class MySqlPropertyManagerSingletonHolder {

@@ -1,6 +1,7 @@
 package com.netcracker.istimaldar.service.command.factory;
 
 import com.netcracker.istimaldar.service.command.ActionCommand;
+import com.netcracker.istimaldar.service.command.AddAuthorCommand;
 
 import javax.servlet.http.HttpServletRequest;
 
@@ -17,6 +18,9 @@ public class CommandFactory implements AbstractFactory {
     }
 
     public ActionCommand defineCommand(HttpServletRequest request) {
+        if (request.getParameter("req_type").equals("addAuthor")) {
+            return new AddAuthorCommand();
+        }
         return null;
     }
 }

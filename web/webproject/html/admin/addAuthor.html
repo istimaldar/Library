@@ -3,8 +3,36 @@
 <head>
     <meta charset="UTF-8">
     <title>Add author</title>
+    <script type='text/javascript' src='http://ajax.googleapis.com/ajax/libs/jquery/1.4/jquery.min.js'></script>
+
+    <script type="text/javascript">
+        $("#author").submit(function(){
+            var input = $("<input>")
+                .attr("name", "req_type").val("addAuthor");
+            $('#author').append($(input));
+        });
+    </script>
 </head>
 <body>
-
+    <h1>Add author</h1>
+    <form name="author" method="post" id="author" action="../../servlet">
+        <p>First name:<label id="first_name">
+            <input name="first_name" type="text" size="40">
+        </label>
+        </p>
+        <p>Last name:<label id="last_name">
+            <input name="last_name" type="text" size="40">
+        </label>
+        </p>
+        <p>Description:<br>
+            <label id="description">
+                <textarea name="description" cols="40" rows="5"></textarea>
+            </label>
+        </p>
+        <p><input type="submit" value="Отправить">
+            <input type="reset" value="Очистить">
+        </p>
+        <input type="hidden" name="req_type" value="addAuthor">
+    </form>
 </body>
 </html>
