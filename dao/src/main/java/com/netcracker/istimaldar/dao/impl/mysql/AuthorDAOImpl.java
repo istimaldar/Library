@@ -24,7 +24,7 @@ public class AuthorDAOImpl implements AuthorDAO {
     }
 
     @Override
-    public void createAuthor(Author author) {
+    public void createAuthor(Author author) throws SQLException {
         ConnectionPool pool = ConnectionPool.getInstance();
         try (
                 Connection connection = pool.getConnection();
@@ -40,6 +40,7 @@ public class AuthorDAOImpl implements AuthorDAO {
         }
         catch (SQLException e) {
             e.printStackTrace();
+            throw e;
         }
     }
 
